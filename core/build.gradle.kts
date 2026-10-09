@@ -19,11 +19,11 @@ java {
     }
 }
 
-
 tasks.shadowJar {
     archiveClassifier.set("")
     from(project(":support_v1_8").the<SourceSetContainer>()["main"].output)
     from(project(":support_26_2").the<SourceSetContainer>()["main"].output)
+    from(project(":support_v1_21").the<SourceSetContainer>()["main"].output)
 
     dependsOn(":support_v1_8:classes", ":support_26_2:classes")
 }
