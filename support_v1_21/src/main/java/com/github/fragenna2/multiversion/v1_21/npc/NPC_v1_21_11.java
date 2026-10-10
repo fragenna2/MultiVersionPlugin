@@ -42,8 +42,8 @@ public class NPC_v1_21_11 implements NPC {
         GameProfile profile = new GameProfile(uuid, name);
 
         this.serverPlayer = new ServerPlayer(server, serverLevel, profile, ClientInformation.createDefault());
+        spawn();
     }
-
 
     @Override
     public String getName() {

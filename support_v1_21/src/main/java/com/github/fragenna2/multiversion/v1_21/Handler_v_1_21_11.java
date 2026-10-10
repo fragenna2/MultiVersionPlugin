@@ -2,29 +2,16 @@ package com.github.fragenna2.multiversion.v1_21;
 
 
 import com.github.fragenna2.multiversion.api.NMSHandler;
+import com.github.fragenna2.multiversion.api.NPCHandler;
 import org.bukkit.entity.Player;
 
 public class Handler_v_1_21_11 implements NMSHandler {
 
+    private final NPCHandler npcHandler = new NPCHandler_v_1_21_11();
 
     @Override
-    public void spawnNpc(Player player) {
-
-    }
-
-    @Override
-    public void showNpc(Player player) {
-
-    }
-
-    @Override
-    public void hide(Player player) {
-
-    }
-
-    @Override
-    public void destroyNpc(int id) {
-
+    public NPCHandler getNpcHandler() {
+        return npcHandler;
     }
 
     @Override

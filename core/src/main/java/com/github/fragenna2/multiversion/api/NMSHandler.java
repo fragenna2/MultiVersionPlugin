@@ -7,10 +7,7 @@ import java.util.UUID;
 
 public interface NMSHandler {
 
-    void spawnNpc(Player player);
-    void showNpc(Player player);
-    void hide(Player player);
-    void destroyNpc(int id);
+    NPCHandler getNpcHandler();
 
     void test(Player player);
 }

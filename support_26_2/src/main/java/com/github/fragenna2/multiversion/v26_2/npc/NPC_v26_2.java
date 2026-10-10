@@ -43,6 +43,8 @@ public class NPC_v26_2 implements NPC {
         this.serverPlayer.setPos(location.getX(), location.getY(), location.getZ());
         this.serverPlayer.setXRot(location.getPitch());
         this.serverPlayer.setYRot(location.getYaw());
+
+        spawn();
     }
 
     @Override

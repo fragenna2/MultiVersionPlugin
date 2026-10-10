@@ -10,8 +10,6 @@ import org.bukkit.entity.Player;
 
 public class SpawnNpc implements CommandExecutor {
 
-    private static final String OLD_VERSION = "1.8.8";
-
     private final NMSHandler nmsHandler;
 
     public SpawnNpc(NMSHandler nmsHandler) {
@@ -21,21 +19,23 @@ public class SpawnNpc implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        final String serverVersion = Bukkit.getVersion();
-
-        if (!serverVersion.contains(OLD_VERSION)) {
-            sender.sendMessage(ChatColor.RED + "You can't execute this command because the server's version is not supported");
-            return true;
-        }
-
         if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "You can't execute this command");
             return true;
         }
 
+        if (args.length < 1) {
+            sender.sendMessage(ChatColor.RED + "You must provide the name of the npc");
+            return true;
+        }
+
+        if (args[0] == null) {
+            sender.sendMessage(ChatColor.RED + "You must provide the name of the npc");
+            return true;
+        }
+
         final Player player = (Player) sender;
-        nmsHandler.spawnNpc(player);
-        nmsHandler.showNpc(player);
+        nmsHandler.getNpcHandler().spawnNpc(args[0], player.getLocation());
         return true;
     }
 }

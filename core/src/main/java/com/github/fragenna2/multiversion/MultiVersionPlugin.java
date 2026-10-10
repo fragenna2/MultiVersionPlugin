@@ -31,7 +31,7 @@ public class MultiVersionPlugin extends JavaPlugin {
 
         if (serverVersion.contains("26.2")) {
             if (javaMajorVersion < 25) {
-                getLogger().severe("This plugin requires minecraft server's version to be 26.2");
+                getLogger().severe("This plugin requires Minecraft server's version to be 26.2");
                 getLogger().severe("This server is using java: " + System.getProperty("java.version"));
                 return false;
             }
@@ -41,7 +41,7 @@ public class MultiVersionPlugin extends JavaPlugin {
 
         if (serverVersion.contains("1.8.8")) {
             if (javaMajorVersion > 8) {
-                getLogger().severe("This plugin requires minecraft server's version to be 8");
+                getLogger().severe("This plugin requires Minecraft server's version to be 1.8.8");
                 getLogger().severe("This server is using java: " + System.getProperty("java.version"));
                 return false;
             }
